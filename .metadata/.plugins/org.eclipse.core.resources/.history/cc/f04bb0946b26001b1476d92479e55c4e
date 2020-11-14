@@ -6,6 +6,6 @@ public class Prove {
 	
 	public static void main(String[] args) {
 		String str = "ciao come stai";
-		System.out.println(str.chars().allMatch(Character::isDigit));
+		System.out.println(str.chars().toString());
 	}
 }
