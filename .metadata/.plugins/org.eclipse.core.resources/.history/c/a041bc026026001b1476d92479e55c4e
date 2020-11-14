@@ -1,0 +1,78 @@
+package poo.math;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class BigInteger extends AbstractBigInt{
+
+		private ArrayList<Integer> cifre = new ArrayList<>();
+		
+		public BigInteger(int x) {
+			String numero = String.valueOf(x);
+			for(int i=numero.length()-1; i>=0; i--) {
+				cifre.add(Character.digit(numero.charAt(i), 10));
+			}
+			
+		}
+		
+		public BigInteger() {
+			super();
+		}
+		
+	
+		@Override
+		public BigInt factory(int x) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	
+		@Override
+		public BigInt factory() {
+			return new BigInteger();
+		}
+	
+		@Override
+		public BigInt factory(BigInt b) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	
+		@Override
+		public BigInt rem(BigInt d) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	
+		@Override
+		public BigInt pow(int exp) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	
+		@Override
+		public int compareTo(BigInt o) {
+			if(this.lenght() > o.lenght()) return 1;
+			if(this.lenght() < o.lenght()) return -1;
+			String s1 = this.toString(), s2 = o.toString();
+			return s1.compareTo(s2); 
+		}
+	
+		@Override
+		public Iterator<Integer> iterator() {
+			return cifre.iterator();
+		}
+		
+		@Override
+		public ListIterator<Integer> listIterator() {
+			return cifre.listIterator();
+		}
+		
+		public static void main(String[] args) {
+			BigInteger big = new BigInteger(104);
+			BigInteger big2 = new BigInteger(6);
+			
+			System.out.println(big.add(big2));
+		}
+}

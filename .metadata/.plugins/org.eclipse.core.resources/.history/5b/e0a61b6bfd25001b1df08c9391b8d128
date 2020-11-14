@@ -1,0 +1,14 @@
+package poo.math;
+
+import java.math.BigInteger;
+
+public class Prove {
+	
+	public static void main(String[] args) {
+		BigInteger big = new BigInteger("1");
+		
+		
+		
+		System.out.println(BigInteger.valueOf(1));
+	}
+}

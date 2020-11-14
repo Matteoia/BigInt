@@ -1,0 +1,18 @@
+package poo.math;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class Prove {
+	
+	public static void main(String[] args) {
+		LinkedList<Integer> lista = new LinkedList<>();
+		
+		lista.add(1);
+		ListIterator<Integer> lt = lista.listIterator();
+		lt.next();
+		lt.remove();
+		
+		System.out.println(lista);
+	}
+}

@@ -1,0 +1,11 @@
+package poo.math;
+import java.util.LinkedList;
+
+public class Prove {
+	public static void main(String[] args) {
+		Integer x = 9;
+		Integer quoziente = x / 10;
+		Integer resto = x % 10;
+		System.out.println(quoziente +" "+resto);
+	}
+}

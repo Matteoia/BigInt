@@ -1,0 +1,13 @@
+package poo.math;
+import java.util.LinkedList;
+
+public class Prove {
+	public static void main(String[] args) {
+		LinkedList<Integer> lista = new LinkedList<>();
+		int x = 10203040;
+		String cifre = String.valueOf(x);
+	
+		
+		Character.digit(cifre.charAt(7), 10);
+	}
+}

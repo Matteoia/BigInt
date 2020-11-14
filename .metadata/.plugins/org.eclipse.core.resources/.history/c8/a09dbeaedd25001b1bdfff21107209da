@@ -1,0 +1,10 @@
+package poo.math;
+public class Prove {
+	
+	public static void main(String[] args) {
+		String str1 = "12345678";
+		String str2 = "1234567";
+		
+		System.out.println(str1.compareTo(str2));
+	}
+}

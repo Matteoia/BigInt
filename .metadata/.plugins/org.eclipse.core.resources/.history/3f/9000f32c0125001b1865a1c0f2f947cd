@@ -1,0 +1,31 @@
+package poo.math;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class Prove {
+	
+	public LinkedList<Integer> incr() {
+		LinkedList<Integer> x = factory(0);
+		Iterator<Integer> it1 = iterator();
+		ListIterator<Integer> it2 = x.listIterator();
+		Integer corrente = it1.next();
+		Integer quoziente = (corrente) / 10;
+		Integer resto = (corrente) % 10;
+		
+		while(it1.hasNext()) {
+			resto = quoziente;
+			it2.add(resto);
+			it1.next();
+			it2.next();
+		}
+		return x;
+	}
+	
+	public static void main(String[] args) {
+		Integer x = 14;
+		Integer quoziente = x / 10;
+		Integer resto = x % 10;
+		System.out.println(quoziente +" "+resto);
+	}
+}

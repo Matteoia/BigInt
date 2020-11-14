@@ -1,0 +1,14 @@
+package poo.math;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class Prove {
+	
+	public static void main(String[] args) {
+		Integer s1, s2, s3 = 0;
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s3);
+	}
+}

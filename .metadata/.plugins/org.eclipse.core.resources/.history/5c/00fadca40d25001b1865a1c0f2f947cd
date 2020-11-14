@@ -1,0 +1,15 @@
+package poo.math;
+
+import java.util.Iterator;
+
+public abstract class AbstractBigInt implements BigInt {
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder(200);
+		Iterator<Integer> it = iterator();
+		while(it.hasNext()) {
+			sb.append(it.next());
+		}
+		return sb.reverse().toString();
+	}
+}

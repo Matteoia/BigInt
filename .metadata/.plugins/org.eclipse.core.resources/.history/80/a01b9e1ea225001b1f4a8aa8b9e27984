@@ -1,0 +1,141 @@
+package poo.math;
+import java.util.Iterator;
+import java.util.ListIterator;
+
+public interface BigInt extends Comparable<BigInt>, Iterable<Integer>{
+	
+	BigInt factory(int x);
+	BigInt factory();
+	ListIterator<Integer> listIterator();
+	BigInt div(BigInt d);//Ritorna il quoziente della divisione intera tra this e d (this >= d)
+	BigInt rem(BigInt d);//Ritorna il resto della divisione intera tra this e d (thi >= d)
+	BigInt pow(int exp);//Calcola la potenza this^exponent
+	
+	
+	default String value() {
+		StringBuilder sb = new StringBuilder(200);
+		Iterator<Integer> it = iterator();
+		while(it.hasNext()) {
+			sb.append(it.next());
+		}
+		
+		return sb.reverse().toString();
+	}//Ritorna il valore del BigInt sotto forma di Stringa di caratteri
+	
+	
+	default int lenght() {
+		Iterator<Integer> it = this.iterator();
+		int c = 0;
+		while(it.hasNext()) {
+			it.next();
+			c++;
+		}
+		return c;
+	}//Ritorna il numero di cifre di questo BigInt
+	
+		
+	default BigInt incr() {
+		BigInt ris = factory(1);
+		return add(ris);
+	}//incrementa di 1
+	
+	
+	default BigInt decr() {
+		if( this.value().equals("0")) throw new IllegalArgumentException();
+		BigInt ris = factory(1);
+		return sub(ris);
+	}//decrementa di 1	
+	
+	
+	default BigInt add(BigInt a) {
+		BigInt ris = factory(0);
+		if(a.equals(ris))
+			return this;
+		if(this.equals(ris)) 
+			return a;
+		
+		ListIterator<Integer> it1 = ris.listIterator();
+		it1.next(); it1.remove(); it1.previous();
+		int compare = this.compareTo(a);
+		Iterator<Integer> it2, it3;
+		if(compare > 0) {
+			it2 = this.iterator(); it3 = a.iterator();
+		}else {
+			it2 = a.iterator(); it3 = this.iterator();
+		}
+		Integer quoziente = 0, corrente = 0, resto = 0;
+		
+		while(it2.hasNext()) {
+			if(it3.hasNext()) {
+				corrente = it2.next() + it3.next()+quoziente;
+			}else {
+				corrente = it2.next() + quoziente;
+			}
+			quoziente = corrente / 10;
+			resto = corrente % 10;
+			it1.add(resto);
+		}
+		if(quoziente != 0)
+			it1.add(quoziente);
+		return ris;
+	}//add	
+	
+	
+	default BigInt sub(BigInt s) {
+		int compare = this.compareTo(s);
+		if(compare < 0) throw new IllegalArgumentException();
+		BigInt ret = factory(0);
+		if(compare == 0)
+			return ret;
+		ListIterator<Integer> it1 = ret.listIterator();
+		Iterator<Integer> it2 = this.iterator(), it3 = s.iterator();
+		boolean riporto = false;
+		Integer s1 = 0, s2 = 0,corrente = 0;
+		
+		while(it2.hasNext()) {
+			if(it3.hasNext()) {
+				 s2 = it3.next();
+				if(riporto) { 
+					s1 = it2.next()-1;
+					riporto = false;
+				}else { 
+					s1 = it2.next();
+				}
+				corrente = s1 - s2;
+			}
+			else {
+				if(riporto) {
+					s1 = it2.next()-1;
+					riporto = false;
+				}else {
+					s1 = it2.next();
+				}
+				corrente = s1;
+			}
+			
+			if(corrente < 0) {
+				it1.add(corrente+10);
+				riporto = true;
+			}
+			else if(corrente != 0){
+				it1.add(corrente);
+			}
+		}
+		return ret;
+	}//Ritorna un BigInt con la differenza tra this e d (this >= d
+	
+	default BigInt mul(BigInt m) {
+		BigInt ris = factory(0);
+		if(this.equals(ris) || m.equals(ris))
+			return ris;
+		int x = Integer.parseInt(this.value());
+		
+		while(x > 0) {
+			ris.add(m);
+			System.out.println(m);
+			x--;
+		}
+		return ris;
+		
+	}
+}

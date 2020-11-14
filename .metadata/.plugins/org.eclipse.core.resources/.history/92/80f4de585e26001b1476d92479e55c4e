@@ -1,0 +1,65 @@
+package poo.math;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class BigInteger extends AbstractBigInt{
+
+		private LinkedList<Integer> cifre = new LinkedList<>();
+		
+		
+		
+		public BigInteger() {
+			super();
+		}
+		
+	
+		@Override
+		public BigInt factory(int x) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	
+		@Override
+		public BigInt factory() {
+			return new BigInteger();
+		}
+	
+		@Override
+		public BigInt factory(BigInt b) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	
+		@Override
+		public ListIterator<Integer> listIterator() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	
+		@Override
+		public BigInt rem(BigInt d) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	
+		@Override
+		public BigInt pow(int exp) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	
+		@Override
+		public int compareTo(BigInt o) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+	
+		@Override
+		public Iterator<Integer> iterator() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+}

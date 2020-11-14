@@ -1,0 +1,8 @@
+package poo.math;
+
+import java.util.Iterator;
+
+public abstract class AbstractBigInt implements BigInt {
+	
+	
+}

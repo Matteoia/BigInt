@@ -1,0 +1,22 @@
+package poo.math;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class Prove {
+	
+	public static void main(String[] args) {
+		LinkedList<Integer> lista = new LinkedList<>();
+		Iterator<Integer> it = lista.iterator();
+		lista.add(3);
+		lista.add(4);
+		lista.add(5);
+		int c=0;
+		
+		while(it.hasNext()) {
+			it.next();
+			c++;	
+		}
+		System.out.println(c);
+	}
+}

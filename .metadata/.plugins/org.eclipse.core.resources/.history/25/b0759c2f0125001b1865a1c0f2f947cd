@@ -1,0 +1,14 @@
+package poo.math;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class Prove {
+	
+	public static void main(String[] args) {
+		Integer x = 14;
+		Integer quoziente = x / 10;
+		Integer resto = x % 10;
+		System.out.println(quoziente +" "+resto);
+	}
+}

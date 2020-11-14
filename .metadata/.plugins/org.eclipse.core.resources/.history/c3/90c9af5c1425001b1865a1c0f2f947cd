@@ -1,0 +1,12 @@
+package poo.math;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class Prove {
+	
+	public static void main(String[] args) {
+		String prova = "-123";
+		System.out.println(prova.charAt(0) == '-');
+	}
+}

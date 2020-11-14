@@ -1,0 +1,10 @@
+package poo.math;
+import java.util.LinkedList;
+
+public class Prove {
+	public static void main(String[] args) {
+		Integer x = 10;
+		Integer resto = x % 9;
+		System.out.println(resto);
+	}
+}

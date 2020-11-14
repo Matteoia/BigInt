@@ -1,0 +1,5 @@
+package poo.math;
+
+public abstract class AbstractBigInt implements BigInt {
+
+}
